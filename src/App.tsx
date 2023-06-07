@@ -29,7 +29,7 @@ function App() {
             <h2>Simple Drawings</h2>
             This quiz is designed to identify your ability to quickly determine
             which symbol is different from the others. You will be presented with
-            six options - click the one that is different.
+            five options - click the letter below the one that is different.
             <br />
             On the SIFT, you'll have a mouse, so I recommend using one to practice.
             <br />
