@@ -6,15 +6,12 @@ interface QuizQuestionProps {
     scoringFn: ScoringFn;
 }
 export function QuizQuestion({question, scoringFn}: QuizQuestionProps) {
-    // Randomly shuffle the answers
-    const shuffledAnswers = question.answers.sort(() => Math.random() - 0.5);
-
     return (
         <Card raised={true}>
             <CardContent>
                 <CardHeader title={question.title} />
                 <Grid columns={6} columnSpacing={4}>
-                    {shuffledAnswers.map((answer, i) => (
+                    {question.answers.map((answer, i) => (
                         <Button
                             variant="outlined"
                             key={`answer-${i}`}
