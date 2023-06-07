@@ -41,7 +41,7 @@ export function Quiz({ numQuestions }: QuizProps) {
         <div>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ minWidth: 35 }}>
-                    <Timer timerLength={20} doneFn={timerDone}/>
+                    <Timer timerLength={numQuestions * 2} doneFn={timerDone}/>
                 </Box>
                 <Box sx={{ width: '100%', mr: 1 }}>
                     <LinearProgress variant="determinate" value={(1 - (questions.length/numQuestions)) * 100} />

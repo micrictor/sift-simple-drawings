@@ -43,10 +43,10 @@ function App() {
                     aria-label='Number of Questions'
                     defaultValue={10}
                     valueLabelDisplay='auto'
-                    step={1}
+                    step={5}
                     marks
-                    min={1}
-                    max={Questions.length}
+                    min={5}
+                    max={Questions.length - (Questions.length % 5)}
                     onChange={(e, value) => setNumQuestions(value as number)}
                   >
                   </Slider>

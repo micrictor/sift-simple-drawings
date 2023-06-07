@@ -9,7 +9,7 @@ export function QuizQuestion({question, scoringFn}: QuizQuestionProps) {
     return (
         <Card raised={true}>
             <CardContent>
-                <CardHeader title={question.title} />
+                <CardHeader title="Select the symbol that is different from the others."/>
                 <Grid columns={6} columnSpacing={4}>
                     {question.answers.map((answer, i) => (
                         <Button

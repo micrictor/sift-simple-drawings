@@ -27,7 +27,9 @@ export function Timer({ timerLength, doneFn }: TimerProps) {
 
     return (
         <div>
-            0:{secondsLeft.toString().padStart(2, '0')}
+            {secondsLeft > 60
+            && Math.floor(secondsLeft/60)
+            || "0"}:{(secondsLeft % 60).toString().padStart(2, '0')}
         </div>
     )
 }
