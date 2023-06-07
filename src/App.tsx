@@ -47,7 +47,7 @@ function App() {
                     marks
                     min={5}
                     max={Questions.length - (Questions.length % 5)}
-                    onChange={(e, value) => setNumQuestions(value as number)}
+                    onChange={(_, value) => setNumQuestions(value as number)}
                   >
                   </Slider>
                 </Box>

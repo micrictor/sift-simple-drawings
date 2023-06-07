@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Questions } from "./common";
 import { QuizQuestion } from "./QuizQuestion";
-import { Box, Button, Container, LinearProgress } from "@mui/material";
+import { Box, Button, LinearProgress } from "@mui/material";
 import { Timer } from "./Timer";
 
 interface QuizProps {
