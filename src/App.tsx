@@ -1,6 +1,7 @@
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Quiz } from './Quiz';
+import { Paper } from '@mui/material';
 
 const darkTheme = createTheme({
   palette: {
@@ -11,7 +12,13 @@ const darkTheme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Quiz />
+      <Paper sx={{
+        padding: '10rem',
+        height: '30vh',
+        width: '30vw',
+      }}>
+        <Quiz />
+      </Paper>
     </ThemeProvider>
   )
 }

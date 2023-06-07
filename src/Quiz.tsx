@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Questions } from "./common";
 import { QuizQuestion } from "./QuizQuestion";
-import { Button } from "@mui/material";
+import { Box, Button, Container, LinearProgress } from "@mui/material";
 
 export function Quiz() {
     // Randomly select 10 questions from the list of questions
@@ -23,10 +23,19 @@ export function Quiz() {
 
     return (
         <div>
-            {currentQuestion && <QuizQuestion question={currentQuestion!} scoringFn={scoringFn} />}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: '100%', mr: 1 }}>
+                    <LinearProgress variant="determinate" value={(1 - (questions.length/10)) * 100} />
+                </Box>
+                <Box sx={{ minWidth: 35 }}>
+                    <h3>{10 - questions.length}/10</h3>
+                </Box>
+            </Box>
+            {currentQuestion && <QuizQuestion question={currentQuestion} scoringFn={scoringFn} />}
             {!currentQuestion && (
                 <>
-                <h1>Quiz Complete! Your score is {score}/10</h1>
+                <h1>Quiz Complete!</h1>
+                <h2>Your score is {score}/10</h2>
                 <Button
                     variant="contained"
                     onClick={() => {
