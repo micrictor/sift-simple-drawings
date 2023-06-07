@@ -6,9 +6,10 @@ import { Timer } from "./Timer";
 
 interface QuizProps {
     numQuestions: number;
+    setStartQuiz: (startQuiz: boolean) => void;
 }
 
-export function Quiz({ numQuestions }: QuizProps) {
+export function Quiz({ numQuestions, setStartQuiz }: QuizProps) {
     // Randomly select X questions from the list of questions
     // Randomly shuffle the answers within the questions, too
     const getRandomQuestions = (numQuestions: number) => {
@@ -41,7 +42,7 @@ export function Quiz({ numQuestions }: QuizProps) {
         <div>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box sx={{ minWidth: 35 }}>
-                    <Timer timerLength={numQuestions * 2} doneFn={timerDone}/>
+                    <Timer timerLength={numQuestions * 2} doneFn={timerDone} />
                 </Box>
                 <Box sx={{ width: '100%', mr: 1 }}>
                     <LinearProgress variant="determinate" value={(1 - (questions.length/numQuestions)) * 100} />
@@ -59,10 +60,7 @@ export function Quiz({ numQuestions }: QuizProps) {
                 <Button
                     variant="contained"
                     onClick={() => {
-                        let currentQuestions = getRandomQuestions(numQuestions);
-                        setQuestions(currentQuestions);
-                        setCurrentQuestion(currentQuestions[0]);
-                        setScore(0);
+                        setStartQuiz(false);
                     }}
                 >Restart?</Button>
                 </>

@@ -22,7 +22,7 @@ function App() {
         padding: '10rem',
       }}>
         {startQuiz
-        && <Quiz numQuestions={numQuestions} />
+        && <Quiz numQuestions={numQuestions} setStartQuiz={setStartQuiz} />
         || (
           <div>
             <h1>SIFT</h1>
