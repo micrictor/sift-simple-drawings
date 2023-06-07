@@ -59,7 +59,7 @@ export function Quiz({ numQuestions }: QuizProps) {
                 <Button
                     variant="contained"
                     onClick={() => {
-                        let currentQuestions = Questions.sort(() => Math.random() - 0.5).slice(0, 10);
+                        let currentQuestions = getRandomQuestions(numQuestions);
                         setQuestions(currentQuestions);
                         setCurrentQuestion(currentQuestions[0]);
                         setScore(0);
